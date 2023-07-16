@@ -1,0 +1,445 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>dya02_类型转换、常用运算符 | 我的博客</title><meta name="author" content="yanluodeleftfoot"><meta name="copyright" content="yanluodeleftfoot"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第二天  Java 基础语法今日内容介绍： 变量详解 类型转换 运算符 案例技术：获取用户键盘输入的数据  第一章 变量详解变量里的数据在计算机中的底层原理 十进制  由0、1、2、3、4、5、6、 7、8、9组成，按照逢10进1的方式表示数据   二进制  只有0、1，按照逢2进1的方式表示数据   八进制  每3位二进制作为一个单元，最小数是0，最大数是7，共8个数字，这就是八进制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dya02_类型转换、常用运算符">
+<meta property="og:url" content="https://yanluodeleftfoot.github.io/2023/07/13/dya02_%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E5%B8%B8%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="第二天  Java 基础语法今日内容介绍： 变量详解 类型转换 运算符 案例技术：获取用户键盘输入的数据  第一章 变量详解变量里的数据在计算机中的底层原理 十进制  由0、1、2、3、4、5、6、 7、8、9组成，按照逢10进1的方式表示数据   二进制  只有0、1，按照逢2进1的方式表示数据   八进制  每3位二进制作为一个单元，最小数是0，最大数是7，共8个数字，这就是八进制">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yanluodeleftfoot.github.io/img/top-img/1.jpg">
+<meta property="article:published_time" content="2023-07-13T01:52:51.000Z">
+<meta property="article:modified_time" content="2023-07-16T06:43:41.393Z">
+<meta property="article:author" content="yanluodeleftfoot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yanluodeleftfoot.github.io/img/top-img/1.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yanluodeleftfoot.github.io/2023/07/13/dya02_%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E5%B8%B8%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'dya02_类型转换、常用运算符',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-16 14:43:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img%5Ctop-img%5C1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img%5Ctop-img%5Clandu.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="我的博客"><span class="site-name">我的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">dya02_类型转换、常用运算符</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-13T01:52:51.000Z" title="发表于 2023-07-13 09:52:51">2023-07-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-16T06:43:41.393Z" title="更新于 2023-07-16 14:43:41">2023-07-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java%E5%AD%A6%E4%B9%A0/">Java学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="dya02_类型转换、常用运算符"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第二天-Java-基础语法"><a href="#第二天-Java-基础语法" class="headerlink" title="第二天  Java 基础语法"></a>第二天  Java 基础语法</h1><p><strong>今日内容介绍：</strong></p>
+<p><em><strong>变量详解</strong></em></p>
+<p><em><strong>类型转换</strong></em></p>
+<p><em><strong>运算符</strong></em></p>
+<p><em><strong>案例技术：获取用户键盘输入的数据</strong></em></p>
+<hr>
+<h2 id="第一章-变量详解"><a href="#第一章-变量详解" class="headerlink" title="第一章 变量详解"></a>第一章 变量详解</h2><h3 id="变量里的数据在计算机中的底层原理"><a href="#变量里的数据在计算机中的底层原理" class="headerlink" title="变量里的数据在计算机中的底层原理"></a>变量里的数据在计算机中的底层原理</h3><ul>
+<li><p>十进制</p>
+<blockquote>
+<p>由0、1、2、3、4、5、6、 7、8、9组成，按照逢10进1的方式表示数据</p>
+</blockquote>
+</li>
+<li><p>二进制</p>
+<blockquote>
+<p>只有0、1，按照逢2进1的方式表示数据</p>
+</blockquote>
+</li>
+<li><p>八进制</p>
+<blockquote>
+<p>每3位二进制作为一个单元，最小数是0，最大数是7，共8个数字，这就是八进制</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="/../images/day02/01.png"></p>
+<ul>
+<li><p>十六进制</p>
+<blockquote>
+<p>每4位二进制作为一个单元，最小数是0，最大数是15，共16个数字，依次用： 0~9 A B C D E F  代表就是十六进制</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="/../images/day02/02.png"></p>
+<h3 id="计算机的数据单位"><a href="#计算机的数据单位" class="headerlink" title="计算机的数据单位"></a>计算机的数据单位</h3><p><img src="/../images/day02/03.png"></p>
+<h3 id="ASCII编码表"><a href="#ASCII编码表" class="headerlink" title="ASCII编码表"></a>ASCII编码表</h3><p><img src="/../images/day02/04.png"></p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><p><img src="/../images/day02/05.png"></p>
+<h4 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h4><blockquote>
+<p>String</p>
+</blockquote>
+<h2 id="第二章-类型转换"><a href="#第二章-类型转换" class="headerlink" title="第二章 类型转换"></a>第二章 类型转换</h2><h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><blockquote>
+<p>类型范围小的变量，可以直接赋值给类型范围大的变量。</p>
+</blockquote>
+<p><img src="/../images/day02/06.png"></p>
+<h3 id="表达式的自动类型转换"><a href="#表达式的自动类型转换" class="headerlink" title="表达式的自动类型转换"></a>表达式的自动类型转换</h3><p><img src="/../images/day02/07.png"></p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p><img src="/../images/day02/08.png"></p>
+<p><em><strong>强制类型转换注意事项</strong></em></p>
+<ul>
+<li><p>可能会出现数据丢失</p>
+</li>
+<li><p>小数强制转换成整数是直接截断小数保留整数</p>
+</li>
+</ul>
+<h2 id="第三章-运算符"><a href="#第三章-运算符" class="headerlink" title="第三章 运算符"></a>第三章 运算符</h2><h3 id="基本的算数运算符、-符号做连接符"><a href="#基本的算数运算符、-符号做连接符" class="headerlink" title="基本的算数运算符、+符号做连接符"></a>基本的算数运算符、+符号做连接符</h3><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加</td>
+<td>参考小学一年级</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+<td>参考小学一年级</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+<td>参考小学二年级，与“×”相同</td>
+</tr>
+<tr>
+<td>&#x2F;</td>
+<td>除</td>
+<td>与“÷”相同，注意：在Java中两个整数相除结果还是整数。</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余</td>
+<td>获取的是两个数据做除法的余数</td>
+</tr>
+</tbody></table>
+<h3 id="自增自减运算符"><a href="#自增自减运算符" class="headerlink" title="自增自减运算符"></a>自增自减运算符</h3><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自增：++</td>
+<td>放在某个变量前面或者后面，对变量自身的值加1</td>
+</tr>
+<tr>
+<td>自减：- -</td>
+<td>放在某个变量前面或者后面，对变量自身的值减1</td>
+</tr>
+</tbody></table>
+<p><em><strong>自增自减的使用注意事项</strong></em></p>
+<ul>
+<li><p>++、–如果不是单独使用（如在表达式中、或者同时有其它操作），放在变量前后会存在明显区别</p>
+<blockquote>
+<p>放在变量的前面，先对变量进行+1、-1，再拿变量的值进行运算</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">ra</span> <span class="operator">=</span> ++a;（先加再用）</span><br><span class="line">    a = <span class="number">11</span></span><br><span class="line">    ra = <span class="number">11</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>放在变量的后面，先拿变量的值进行运算，再对变量的值进行+1、-1</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">rs</span> <span class="operator">=</span> b++; （先用再加）</span><br><span class="line">    b = <span class="number">11</span>;</span><br><span class="line">	rs = <span class="number">10</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><h4 id="基本赋值运算符"><a href="#基本赋值运算符" class="headerlink" title="基本赋值运算符"></a>基本赋值运算符</h4><ul>
+<li>就是“&#x3D;”，从右边往左看。</li>
+</ul>
+<blockquote>
+<p>int a &#x3D; 10;  &#x2F;&#x2F; 先看“&#x3D;”右边，把数据10赋值给左边的变量a存储</p>
+</blockquote>
+<h4 id="扩展赋值运算符"><a href="#扩展赋值运算符" class="headerlink" title="扩展赋值运算符"></a>扩展赋值运算符</h4><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>用法</th>
+<th>作用</th>
+<th>底层代码形式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+&#x3D;</td>
+<td>a+&#x3D;b</td>
+<td>加后赋值</td>
+<td>a &#x3D; ( a的类型 )( a + b )</td>
+</tr>
+<tr>
+<td>-&#x3D;</td>
+<td>a-&#x3D;b</td>
+<td>减后赋值</td>
+<td>a &#x3D; ( a的类型 )( a - b )</td>
+</tr>
+<tr>
+<td>*&#x3D;</td>
+<td>a*&#x3D;b</td>
+<td>乘后赋值</td>
+<td>a &#x3D; ( a的类型 )( a * b )</td>
+</tr>
+<tr>
+<td>&#x2F;&#x3D;</td>
+<td>a&#x2F;&#x3D;b</td>
+<td>除后赋值</td>
+<td>a &#x3D; ( a的类型 )( a &#x2F; b )</td>
+</tr>
+<tr>
+<td>%&#x3D;</td>
+<td>a%&#x3D;b</td>
+<td>取余后赋值</td>
+<td>a &#x3D; ( a的类型 )( a % b )</td>
+</tr>
+</tbody></table>
+<p><em><strong>注意：扩展的赋值运算符隐含了强制类型转换。</strong></em></p>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>用法</th>
+<th>作用</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;</td>
+<td>a &gt; b</td>
+<td>判断a是否大于b</td>
+<td>成立返回true、不成立返回false</td>
+</tr>
+<tr>
+<td>&gt;&#x3D;</td>
+<td>a &gt;&#x3D; b</td>
+<td>判断a是否大于或者等于b</td>
+<td>成立返回true、不成立返回false</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>a &lt; b</td>
+<td>判断a是否小于b</td>
+<td>成立返回true、不成立返回false</td>
+</tr>
+<tr>
+<td>&lt;&#x3D;</td>
+<td>a &lt;&#x3D; b</td>
+<td>判断a是否小于或者等于b</td>
+<td>成立返回true、不成立返回false</td>
+</tr>
+<tr>
+<td>&#x3D;&#x3D;</td>
+<td>a &#x3D;&#x3D; b</td>
+<td>判断a是否等于b</td>
+<td>成立返回true、不成立返回false</td>
+</tr>
+<tr>
+<td>!&#x3D;</td>
+<td>a !&#x3D; b</td>
+<td>判断a是否不等于b</td>
+<td>成立返回true、不成立返回false</td>
+</tr>
+</tbody></table>
+<ul>
+<li>判断数据是否满足条件，最终会返回一个判断的结果，这个结果是布尔类型的值：true或者false。</li>
+<li>在java中判断是否相等一定是“&#x3D;&#x3D; ” ，千万不要把  “&#x3D;&#x3D; ”误写成 “&#x3D;”。</li>
+</ul>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">叫法</th>
+<th align="center">例子</th>
+<th align="center">运算逻辑</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&amp;</td>
+<td align="center">逻辑与</td>
+<td align="center">2 &gt; 1 &amp; 3 &gt; 2</td>
+<td align="center">多个条件必须都是true，结果才是true；有一个false，结果就是false</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="center">逻辑或</td>
+<td align="center">2 &gt; 1 | 3 &lt; 5</td>
+<td align="center">多个条件中只要有一个true，结果就是true；</td>
+</tr>
+<tr>
+<td align="center">!</td>
+<td align="center">逻辑非</td>
+<td align="center">! ( 2 &gt; 1 )</td>
+<td align="center">就是取反：你真我假，你假我真。！true &#x3D;&#x3D; false、 ！false &#x3D;&#x3D; true</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">逻辑异或</td>
+<td align="center">2 &gt; 1 ^ 3 &gt; 1</td>
+<td align="center">前后条件的结果相同，就直接返回false，前后条件结果不同，才返回true</td>
+</tr>
+<tr>
+<td align="center"><strong>符号</strong></td>
+<td align="center"><strong>叫法</strong></td>
+<td align="center"><strong>例子</strong></td>
+<td align="center"><strong>运算逻辑</strong></td>
+</tr>
+<tr>
+<td align="center">&amp;&amp;</td>
+<td align="center">a !&#x3D; b</td>
+<td align="center">2 &gt; 10 &amp;&amp; 3 &gt; 2</td>
+<td align="center">判断结果与“&amp;”一样，过程不同：左边为false，右边则不执行</td>
+</tr>
+<tr>
+<td align="center">||</td>
+<td align="center">短路或</td>
+<td align="center">2 &gt; 10 || 3 &gt; 2</td>
+<td align="center">判断结果与“|”一样，过程不同：左边为false，右边则不执行</td>
+</tr>
+</tbody></table>
+<h3 id="三元运算符、运算符的优先级"><a href="#三元运算符、运算符的优先级" class="headerlink" title="三元运算符、运算符的优先级"></a>三元运算符、运算符的优先级</h3><h4 id="三元运算符介绍"><a href="#三元运算符介绍" class="headerlink" title="三元运算符介绍"></a>三元运算符介绍</h4><blockquote>
+<ul>
+<li>格式： <strong>条件表达式 ?  值1 ：值2；</strong></li>
+<li>执行流程：首先计算<strong>关系表达式的值</strong>，如果值为<strong>true</strong>，返回<strong>值1</strong>，如果为<strong>false</strong>，返回<strong>值2</strong>。</li>
+</ul>
+</blockquote>
+<h4 id="运算符的优先级"><a href="#运算符的优先级" class="headerlink" title="运算符的优先级"></a>运算符的优先级</h4><blockquote>
+<ul>
+<li>在表达式中，哪个运算符先执行后执行是要看优先级的，例如 “*、&#x2F;” 的优先级高于”+、-”。</li>
+</ul>
+</blockquote>
+<p><img src="/../images/day02/10.png"></p>
+<h2 id="第四章-案例技术：获取用户键盘输入的数据"><a href="#第四章-案例技术：获取用户键盘输入的数据" class="headerlink" title="第四章 案例技术：获取用户键盘输入的数据"></a>第四章 案例技术：获取用户键盘输入的数据</h2><p><img src="/../images/day02/11.png"></p>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><p><em><strong>使用键盘录入的知识点，录入个人的信息。例如，姓名（字符串类型），年龄（整数类型），语文成绩（小数）。</strong></em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo01</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入你的姓名：&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> sc.next();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入你的年龄：&quot;</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入你的语文成绩：&quot;</span>);</span><br><span class="line">        <span class="type">double</span> <span class="variable">score</span> <span class="operator">=</span> sc.nextDouble();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;你的姓名是：&quot;</span> + name);</span><br><span class="line">        System.out.println(<span class="string">&quot;你的年龄是：&quot;</span> + age);</span><br><span class="line">        System.out.println(<span class="string">&quot;你的语文成绩是：&quot;</span> + score);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yanluodeleftfoot.github.io">yanluodeleftfoot</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yanluodeleftfoot.github.io/2023/07/13/dya02_%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E5%B8%B8%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6/">https://yanluodeleftfoot.github.io/2023/07/13/dya02_%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E5%B8%B8%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yanluodeleftfoot.github.io" target="_blank">我的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img%5Ctop-img%5C1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/13/day03_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" title="day03_流程控制"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">day03_流程控制</div></div></a></div><div class="next-post pull-right"><a href="/2023/07/11/Day01_Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" title="Day01_Java基础入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Day01_Java基础入门</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img%5Ctop-img%5C1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">yanluodeleftfoot</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%A4%A9-Java-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">第二天  Java 基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%8F%98%E9%87%8F%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.1.</span> <span class="toc-text">第一章 变量详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">变量里的数据在计算机中的底层原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8D%95%E4%BD%8D"><span class="toc-number">1.1.2.</span> <span class="toc-text">计算机的数据单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASCII%E7%BC%96%E7%A0%81%E8%A1%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text">ASCII编码表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.4.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">引用数据类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.2.</span> <span class="toc-text">第二章 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.2.1.</span> <span class="toc-text">自动类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.2.2.</span> <span class="toc-text">表达式的自动类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.2.3.</span> <span class="toc-text">强制类型转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.</span> <span class="toc-text">第三章 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81-%E7%AC%A6%E5%8F%B7%E5%81%9A%E8%BF%9E%E6%8E%A5%E7%AC%A6"><span class="toc-number">1.3.1.</span> <span class="toc-text">基本的算数运算符、+符号做连接符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.2.</span> <span class="toc-text">自增自减运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.3.</span> <span class="toc-text">赋值运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">基本赋值运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">扩展赋值运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.4.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.5.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.3.6.</span> <span class="toc-text">三元运算符、运算符的优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.3.6.1.</span> <span class="toc-text">三元运算符介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.3.6.2.</span> <span class="toc-text">运算符的优先级</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%A1%88%E4%BE%8B%E6%8A%80%E6%9C%AF%EF%BC%9A%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">1.4.</span> <span class="toc-text">第四章 案例技术：获取用户键盘输入的数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0"><span class="toc-number">1.4.1.</span> <span class="toc-text">练习</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/16/HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5/" title="HEXO博客搭建攻略">HEXO博客搭建攻略</a><time datetime="2023-07-16T06:37:41.000Z" title="发表于 2023-07-16 14:37:41">2023-07-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/13/day03_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" title="day03_流程控制">day03_流程控制</a><time datetime="2023-07-13T01:53:53.000Z" title="发表于 2023-07-13 09:53:53">2023-07-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/13/dya02_%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E5%B8%B8%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6/" title="dya02_类型转换、常用运算符">dya02_类型转换、常用运算符</a><time datetime="2023-07-13T01:52:51.000Z" title="发表于 2023-07-13 09:52:51">2023-07-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/11/Day01_Java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" title="Day01_Java基础入门">Day01_Java基础入门</a><time datetime="2023-07-11T01:56:46.000Z" title="发表于 2023-07-11 09:56:46">2023-07-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By yanluodeleftfoot</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
